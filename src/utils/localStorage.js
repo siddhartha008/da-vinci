@@ -38,6 +38,11 @@ export const getApiKey = () => {
             return storedKey;
         }
 
+        if (import.meta.env.VITE_GEMINI_API_KEY) {
+            return import.meta.env.VITE_GEMINI_API_KEY;
+        }
+
+
         return null;
     } catch (error) {
         console.error('Error retrieving API key:', error);
